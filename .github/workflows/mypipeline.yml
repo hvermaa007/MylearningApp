@@ -8,4 +8,4 @@ jobs:
     - name: Checkout Code
       uses: actions/checkout@v3
     - name: "Hello"
-      run: echo "HI welcome to GitHub"xxx`
+      run: echo "HI welcome to GitHub"
