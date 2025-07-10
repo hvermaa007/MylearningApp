@@ -1,0 +1,11 @@
+name: Sample Workflow
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v3
+    - name: "Hello"
+      run: echo "HI welcome to GitHub"xxx`
