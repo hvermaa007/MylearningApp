@@ -5,11 +5,12 @@ jobs:
     runs-on: self-hosted
 
     steps:
+
+      - name: Checkout Code
+        uses: actions/checkout@v3
       - name: Run custom greeting action
         uses: ./.github/actions/sayhello
         with:
            username: ${{ github.actor }} #actor is the one who commits or raises PR
-      - name: Checkout Code
-        uses: actions/checkout@v3
       - name: "Hello"
         run: echo "HI welcome to GitHub"
