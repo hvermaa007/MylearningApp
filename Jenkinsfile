@@ -14,7 +14,7 @@ pipeline {
 
         stage('Install dependencies') {
             steps {
-                 echo 'hi stage 1 '
+                 echo 'hi stage 1, installed webhooks '
             }
         }
 
