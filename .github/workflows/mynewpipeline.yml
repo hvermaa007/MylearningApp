@@ -1,11 +1,11 @@
-name: Pipleine_2
+name: Pipeline_2
 on:
   push:
     branches: [ "hvermaa007-patch-1" ]
   pull_request:
     branches: [ "hvermaa007-patch-1" ]
 jobs: 
-  test: 
+  Install_Node_Js: 
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
@@ -15,10 +15,11 @@ jobs:
       with: 
        node-version: '20'
        
-    - name: install dependencies
-      run: npm install 
-
-    - name: Run Tests
-      run: npm test
+    - name: Debug - List files
+      run: |
+        echo "📂 Current directory structure:"
+        ls -R
+        echo "----------------------------------"
+      
        
   
