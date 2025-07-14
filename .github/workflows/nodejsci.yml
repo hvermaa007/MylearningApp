@@ -33,5 +33,5 @@ jobs:
           name: junit-results
           path: junit.xml
       - name: Run ESLint
-        run: npm run lint
+        run: npx eslint
 
