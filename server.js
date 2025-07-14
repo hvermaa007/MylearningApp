@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 
 app.get('/', (req, res) => {
-  res.send('hi, World!');
+  res.send('Hello, World!');
 });
 
 // New route with a linting issue: unused variable
