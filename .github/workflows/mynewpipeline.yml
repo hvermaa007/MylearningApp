@@ -1,0 +1,23 @@
+name: Pipleine_2
+on:
+  push:
+    branches: [ "hvermaa007-patch-1" ]
+  pull_request:
+    branches: [ "hvermaa007-patch-1" ]
+jobs: 
+  test: 
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Setup
+      uses: actions/setup-node@v3
+      with: 
+       node-version: '20'
+    - name: install dependencies
+      run: npm install 
+
+    - name: Run Tests
+      run: npm test
+       
+  
