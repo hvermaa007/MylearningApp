@@ -13,4 +13,22 @@ jobs:
         with:
            username: ${{ github.actor }} #actor is the one who commits or raises PR
       - name: "Hello"
-        run: echo "HI welcome to GitHub"
+        run: echo "HI welcome to Testing"
+      - name: Install Dependencies
+        run: npm i
+        # | pipe is used to run multiple commands 
+      - name: Run Test with Coverage   
+        run: | 
+           npm install --save-dev jest-junit
+           npx jest --coverage --ci --reporters=default --reporters=jest-junit
+      - name: Upload coverage report
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-report
+          path: coverage/
+      - name: Upload JUnit test results
+        uses: actions/upload-artifact@v4
+        with:
+          name: junit-results
+          path: junit.xml
+
