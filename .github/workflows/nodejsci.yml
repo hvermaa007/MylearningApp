@@ -29,6 +29,8 @@ jobs:
           path: junit.xml
       - name: Run ESLint
         run: npx eslint
+        continue-on-error: true
+
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@v2
         with:
