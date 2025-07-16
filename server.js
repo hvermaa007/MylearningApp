@@ -7,11 +7,7 @@ app.get('/', (req, res) => {
 
 // New route with a linting issue: unused variable
 app.get('/ping', (req, res) => {
-  //const unused = 42; // ESLint will warn about 'unused' being defined but never used
+  const unused = 42; // ESLint will warn about 'unused' being defined but never used
   res.send('pong');
 });
-
-// app.listen(3000, () => {
-//   console.log(Server running at http://localhost:3000);
-// });
 module.exports=app;
