@@ -7,6 +7,7 @@ app.get('/', (req, res) => {
 
 // New route with a linting issue: unused variable
 app.get('/ping', (req, res) => {
+  const password = "dsfds33@3343";
   const unused = 42; // ESLint will warn about 'unused' being defined but never used
   const abd;
   abd = 55;
