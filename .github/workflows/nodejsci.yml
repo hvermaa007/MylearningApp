@@ -29,4 +29,10 @@ jobs:
           path: junit.xml
       - name: Run ESLint
         run: npx eslint
+      - name: Run Snyk
+        uses: snyk/actions/node@0.4.0
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_SECRET }}
+        with:
+            command: test
 
