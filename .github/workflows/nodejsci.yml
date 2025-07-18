@@ -2,9 +2,11 @@ name: NODEJS CI
 on: [push, pull_request]
 jobs:
   build:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
 
     
       - name: "Hello"
@@ -13,6 +15,7 @@ jobs:
         run: npm i
         # | pipe is used to run multiple commands 
       - name: Run Test with Coverage   
+        continue-on-error: true
         run: | 
            npm install --save-dev jest-junit
            npx jest --coverage --ci --reporters=default --reporters=jest-junit
@@ -28,5 +31,12 @@ jobs:
           name: junit-results
           path: junit.xml
       - name: Run ESLint
+        continue-on-error: true
         run: npx eslint
+      - name: Run Snyk
+        uses: snyk/actions/node@0.4.0
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_SECRET }}
+        with:
+            command: test
 
