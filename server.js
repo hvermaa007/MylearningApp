@@ -11,6 +11,10 @@ app.get('/ping', (req, res) => {
   const unused = 42; // ESLint will warn about 'unused' being defined but never used
   const abd;
   abd = 55;
+  const passwrd="rwewe@3432"
+  const DB_PASSWORD = 'P@ss123!';
+  const AWS_SECRET_ACCESS_KEY = 'AKIAIOSFODNN7EXAMPLE';
+  const API_KEY = 'sk_test_51Hq...';
   res.send('pong');
 });
 module.exports=app;
