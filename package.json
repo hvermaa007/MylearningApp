@@ -14,6 +14,7 @@
   "dependencies": {
     "express":"^5.1.0",
     "lodash": "4.17.20",
-    "minimist": "0.2.4"
+    "minimist": "0.2.4",
+    "moment": "2.19.3"
   }
 }
