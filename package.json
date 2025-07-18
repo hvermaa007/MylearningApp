@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "express":"^5.1.0",
-    "lodash": "4.17.21",
+    "lodash": "4.17.20",
     "minimist": "0.2.4"
   }
 }
