@@ -32,11 +32,25 @@ jobs:
           path: junit.xml
       - name: Run ESLint
         continue-on-error: true
-        run: npx eslint
+        run: npx
+        continue-on-error: true
+
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@v2
+        with:
+          args: >
+            -Dsonar.sources=.
+            -Dsonar.inclusions=server.js
+            -Dsonar.projectKey=hvermaa007_MylearningApp
+            -Dsonar.organization=hvermaa007
+            -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info
+          env:
+            SONAR_TOKEN: 'f802865a762002f0778a09a9aa6db133ad1ee928'
       - name: Run Snyk
         uses: snyk/actions/node@0.4.0
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_SECRET }}
         with:
             command: test
+
 
