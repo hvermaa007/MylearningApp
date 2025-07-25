@@ -33,7 +33,6 @@ jobs:
       - name: Run ESLint
         continue-on-error: true
         run: npx
-        continue-on-error: true
 
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@v2
@@ -52,5 +51,11 @@ jobs:
           SNYK_TOKEN: ${{ secrets.SNYK_SECRET }}
         with:
             command: test
+            
+      - name: Image Build
+        run: docker build . -t myapp:1.0
+        
+
+      
 
 
